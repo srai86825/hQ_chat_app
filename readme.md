@@ -4,10 +4,7 @@ This repository contains the backend code for a real-time chat application built
 
 ## Video Demonstration
 
-[<video width="600" controls>
-  <source src="hirequotient_assignment_demo - final.mp4
-  Your browser does not support the video tag.
-</video>](https://drive.google.com/file/d/1lAX7huXF8V3eEluer_KNcoEaMNr45yUo/view?usp=drive_link)
+https://drive.google.com/file/d/1lAX7huXF8V3eEluer_KNcoEaMNr45yUo/view?usp=drive_link
 
 ## Features
 
