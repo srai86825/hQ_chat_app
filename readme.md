@@ -1,8 +1,14 @@
-### Real-Time Chat Application Backend
+# Real-Time Chat Application Backend
 
 This repository contains the backend code for a real-time chat application built using the MERN stack. The backend is responsible for managing user authentication, message storage, online status management, and integration with third-party APIs for language processing.
 
-### Features
+## Video Demonstration
+
+Here is a video demonstration of the application:
+
+![Video](hirequotient_assignment_demo - final.mp4)
+
+## Features
 
 - **User Authentication:** Users can register and log in using email and password. JWT (JSON Web Tokens) are used for managing authentication.
 - **Chat Functionality:** Users can send and receive real-time messages using Socket.io for efficient communication.
@@ -10,7 +16,7 @@ This repository contains the backend code for a real-time chat application built
 - **User Online Status:** Users can set their status as 'AVAILABLE' or 'BUSY'. The backend handles online status management and allows users to chat only when they are online.
 - **LLM Integration:** Integration with third-party Language Model APIs allows automatic response generation when a user is 'BUSY'. If the recipient is 'BUSY', an appropriate response is generated using the Language Model API. If the API does not respond within 10 seconds, a standard message indicating the user is unavailable is sent.
 
-### Technologies Used
+## Technologies Used
 
 - **Node.js:** Backend server runtime environment.
 - **Express.js:** Web application framework for Node.js used for routing and middleware.
@@ -20,9 +26,7 @@ This repository contains the backend code for a real-time chat application built
 - **Prisma:** ORM (Object-Relational Mapping) tool for interacting with the database.
 - **Third-Party Language Model API:** Integration with third-party APIs for language processing.
 
-
-
-### Setup and Run Instructions
+## Setup and Run Instructions
 
 1. **Clone the Repository:**
    ```bash
@@ -52,12 +56,9 @@ This repository contains the backend code for a real-time chat application built
    npm start
    ```
 
+## User Routes
 
-
-
-### User Routes
-
-#### 1. POST /status/available
+### 1. POST /status/available
 
 - **Description:** Set user status as 'AVAILABLE'.
 - **Expected Input:**
@@ -71,7 +72,7 @@ This repository contains the backend code for a real-time chat application built
   - Updates the status of the user with the specified `userId` to 'AVAILABLE'.
   - Returns the updated user object with the new status.
 
-#### 2. POST /status/busy
+### 2. POST /status/busy
 
 - **Description:** Set user status as 'BUSY'.
 - **Expected Input:**
@@ -85,9 +86,9 @@ This repository contains the backend code for a real-time chat application built
   - Updates the status of the user with the specified `userId` to 'BUSY'.
   - Returns the updated user object with the new status.
 
-### Message Routes
+## Message Routes
 
-#### 1. GET /get-initial-users/:userId
+### 1. GET /get-initial-users/:userId
 
 - **Description:** Retrieve initial users with messages for a given user.
 - **Expected Input:**
@@ -98,7 +99,7 @@ This repository contains the backend code for a real-time chat application built
   - Includes sent and received messages for the user.
   - Returns an array of users with their associated messages and online status.
 
-#### 2. POST /add-message
+### 2. POST /add-message
 
 - **Description:** Add a new message to the database.
 - **Expected Input:**
@@ -118,7 +119,7 @@ This repository contains the backend code for a real-time chat application built
   - Emits the received message to the sender using Socket.io.
   - Returns the newly created message object.
 
-#### 3. GET /get-messages/:from/:to
+### 3. GET /get-messages/:from/:to
 
 - **Description:** Retrieve messages between two users.
 - **Expected Input:**
@@ -130,9 +131,9 @@ This repository contains the backend code for a real-time chat application built
   - Marks unread messages as 'read' and updates the database.
   - Returns an array of messages between the specified sender and receiver.
 
-### Auth Routes
+## Auth Routes
 
-#### 1. POST /check-user
+### 1. POST /check-user
 
 - **Description:** Check if a user exists based on email.
 - **Expected Input:**
@@ -146,7 +147,7 @@ This repository contains the backend code for a real-time chat application built
   - Checks if a user with the specified email exists in the database.
   - Returns a response indicating whether the user exists or not.
 
-#### 2. POST /onboard
+### 2. POST /onboard
 
 - **Description:** Create a new user and onboard them.
 - **Expected Input:**
@@ -165,7 +166,7 @@ This repository contains the backend code for a real-time chat application built
   - Generates a JWT token for authentication.
   - Returns a response indicating successful user creation along with the JWT token.
 
-#### 3. POST /login-user
+### 3. POST /login-user
 
 - **Description:** Log in an existing user.
 - **Expected Input:**
@@ -181,7 +182,7 @@ This repository contains the backend code for a real-time chat application built
   - If the credentials are valid, generates a JWT token for authentication.
   - Returns a response indicating successful login along with the JWT token.
 
-#### 4. GET /get-all-users
+### 4. GET /get-all-users
 
 - **Description:** Retrieve all users.
 - **Expected Input:**
@@ -191,9 +192,7 @@ This repository contains the backend code for a real-time chat application built
   - Groups users by initial letters of their names.
   - Returns an object containing users grouped by initial letters.
 
-
-
-Sure, here are sample inputs and outputs for each route:
+## Sample Inputs and Outputs
 
 ### User Routes
 
@@ -213,7 +212,7 @@ Sure, here are sample inputs and outputs for each route:
       "id": "123456789",
       "email": "user@example.com",
       "name": "John Doe",
-      "about": "Hey there!, i am using chat app.",
+      "about": "Hey there!, I am using chat app.",
       "status": "available"
     }
     ```
@@ -234,7 +233,7 @@ Sure, here are sample inputs and outputs for each route:
       "id": "123456789",
       "email": "user@example.com",
       "name": "John Doe",
-      "about": "Hey there!, i am using chat app.",
+      "about": "Hey there!, I am using chat app.",
       "status": "busy"
     }
     ```
@@ -271,6 +270,9 @@ Sure, here are sample inputs and outputs for each route:
               }
             ],
             "receivedMessages": [
+              {
+                "id": "2",
+                "message": "I'm doing              ```json
               {
                 "id": "2",
                 "message": "I'm doing well, thanks!",
@@ -381,7 +383,7 @@ Sure, here are sample inputs and outputs for each route:
         "id": "123456789",
         "email": "user@example.com",
         "name": "John Doe",
-        "about": "Hey there!, i am using chat app.",
+        "about": "Hey there!, I am using chat app.",
         "status": "available"
       }
     }
@@ -403,7 +405,7 @@ Sure, here are sample inputs and outputs for each route:
       "name": "John Doe",
       "email": "user@example.com",
       "password": "password123",
-      "about": "Hey there!, i am using chat app."
+      "about": "Hey there!, I am using chat app."
     }
     ```
 - **Sample Output:**
@@ -416,7 +418,7 @@ Sure, here are sample inputs and outputs for each route:
         "id": "123456789",
         "email": "user@example.com",
         "name": "John Doe",
-        "about": "Hey there!, i am using chat app.",
+        "about": "Hey there!, I am using chat app.",
         "status": "available"
       },
       "token": "<JWT-token>"
@@ -426,7 +428,7 @@ Sure, here are sample inputs and outputs for each route:
 #### 3. POST /login-user
 
 - **Sample Input:**
-  -Request Body:
+  - Request Body:
     ```json
     {
       "email": "user@example.com",
@@ -443,7 +445,7 @@ Sure, here are sample inputs and outputs for each route:
         "id": "123456789",
         "email": "user@example.com",
         "name": "John Doe",
-        "about": "Hey there!, i am using chat app.",
+        "about": "Hey there!, I am using chat app.",
         "status": "available"
       },
       "token": "<JWT-token>"
@@ -470,7 +472,7 @@ Sure, here are sample inputs and outputs for each route:
             "id": "123456789",
             "email": "user@example.com",
             "name": "John Doe",
-            "about": "Hey there!, i am using chat app.",
+            "about": "Hey there!, I am using chat app.",
             "status": "available"
           },
           {
@@ -494,3 +496,4 @@ Sure, here are sample inputs and outputs for each route:
     }
     ```
 
+```
