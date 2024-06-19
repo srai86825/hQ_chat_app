@@ -4,9 +4,10 @@ This repository contains the backend code for a real-time chat application built
 
 ## Video Demonstration
 
-Here is a video demonstration of the application:
-
-![Video](hirequotient_assignment_demo - final.mp4)
+<video width="600" controls>
+  <source src="hirequotient_assignment_demo - final.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ## Features
 
