@@ -4,7 +4,11 @@ This repository contains the backend code for a real-time chat application built
 
 ## Video Demonstration
 
+https://github.com/srai86825/hQ_chat_app/assets/91911821/6a9bd46d-9575-46fb-80c0-e265d5a64a45
+
+
 https://drive.google.com/file/d/1lAX7huXF8V3eEluer_KNcoEaMNr45yUo/view?usp=drive_link
+
 
 ## Features
 
